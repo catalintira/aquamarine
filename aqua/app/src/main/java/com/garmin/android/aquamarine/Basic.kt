@@ -23,3 +23,18 @@ class SavingAccount(balance: Float) : Account(balance) {
         super.withdraw(sumToWithdraw)
     }
 }
+
+// Exercise 2
+
+//      N
+//  W       E
+//      S
+
+fun getCardinalDirections(angle : Int) : String {
+    return when (angle) {
+        in 45..134 -> "E"
+        in 135..224 -> "S"
+        in 225..314 -> "W"
+        else -> "N"
+    }
+}
