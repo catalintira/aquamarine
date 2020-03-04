@@ -4,19 +4,19 @@ package com.garmin.android.aquamarine
 
 open class Account(var balance: Float) {
 
-    open fun withdraw(sumToWithdraw : Float) {
+    open fun withdraw(sumToWithdraw: Float) {
         balance -= sumToWithdraw
     }
 
-    fun deposit(sumToDeposit : Float) {
+    fun deposit(sumToDeposit: Float) {
         balance += sumToDeposit
     }
 }
 
 class SavingAccount(balance: Float) : Account(balance) {
 
-    override fun withdraw(sumToWithdraw : Float) {
-        if(sumToWithdraw > balance) {
+    override fun withdraw(sumToWithdraw: Float) {
+        if (sumToWithdraw > balance) {
             throw IllegalArgumentException()
         }
 
@@ -30,7 +30,7 @@ class SavingAccount(balance: Float) : Account(balance) {
 //  W       E
 //      S
 
-fun getCardinalDirections(angle : Int) : String {
+fun getCardinalDirections(angle: Int): String {
     return when (angle) {
         in 45..134 -> "E"
         in 135..224 -> "S"
@@ -43,7 +43,7 @@ fun getCardinalDirections(angle : Int) : String {
 
 val vocals = listOf('a', 'e', 'i', 'o', 'u')
 
-fun getVocalsCount(input : String) : Int {
+fun getVocalsCount(input: String): Int {
     var toReturn = 0
 
     input.forEach {
@@ -62,9 +62,15 @@ class RectangularShape(var x: Int, var y: Int, var with: Int, var height: Int, v
 
 fun validateShape(shape: RectangularShape): Boolean {
     return when {
-        shape.x < 0 || shape.y < 0 -> { print("invalid position"); false }
-        shape.with > 1024 || shape.height > 1024 -> { print("shape too big"); false }
-        shape.color < 0 || shape.color > 0xFFFFFF -> { print("invalid color"); false }
+        shape.x < 0 || shape.y < 0 -> {
+            print("invalid position"); false
+        }
+        shape.with > 1024 || shape.height > 1024 -> {
+            print("shape too big"); false
+        }
+        shape.color < 0 || shape.color > 0xFFFFFF -> {
+            print("invalid color"); false
+        }
         else -> true
     }
 }
@@ -72,7 +78,7 @@ fun validateShape(shape: RectangularShape): Boolean {
 // Exercise 4 B
 
 fun initShape(shape: RectangularShape?) {
-    shape?.apply{
+    shape?.apply {
         x = 10
         y = 20
         with = 100
