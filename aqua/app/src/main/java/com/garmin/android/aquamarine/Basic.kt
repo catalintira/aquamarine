@@ -38,3 +38,17 @@ fun getCardinalDirections(angle : Int) : String {
         else -> "N"
     }
 }
+
+// Exercise 3
+
+val vocals = listOf('a', 'e', 'i', 'o', 'u')
+
+fun getVocalsCount(input : String) : Int {
+    var toReturn = 0
+
+    input.forEach {
+        if (vocals.contains(it)) ++toReturn
+    }
+
+    return toReturn
+}
