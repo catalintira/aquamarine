@@ -52,3 +52,19 @@ fun getVocalsCount(input : String) : Int {
 
     return toReturn
 }
+
+// Exercise 4 A
+
+class RectangularShape(var x: Int, var y: Int, var with: Int, var height: Int, var color: Int) {
+    fun measure() {}
+    fun render() {}
+}
+
+fun validateShape(shape: RectangularShape): Boolean {
+    return when {
+        shape.x < 0 || shape.y < 0 -> { print("invalid position"); false }
+        shape.with > 1024 || shape.height > 1024 -> { print("shape too big"); false }
+        shape.color < 0 || shape.color > 0xFFFFFF -> { print("invalid color"); false }
+        else -> true
+    }
+}
