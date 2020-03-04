@@ -81,5 +81,11 @@ fun initShape(shape: RectangularShape?) {
     } ?: throw IllegalArgumentException()
 }
 
+// Exercise 4 C
 
+fun drawShape(shape: RectangularShape?) {
+    shape?.also { validateShape(it) }
+        ?.also { it.measure() }
+        ?.also { it.render() }
+}
 
