@@ -68,3 +68,18 @@ fun validateShape(shape: RectangularShape): Boolean {
         else -> true
     }
 }
+
+// Exercise 4 B
+
+fun initShape(shape: RectangularShape?) {
+    shape?.apply{
+        x = 10
+        y = 20
+        with = 100
+        height = 200
+        color = 0xFF0066
+    } ?: throw IllegalArgumentException()
+}
+
+
+
