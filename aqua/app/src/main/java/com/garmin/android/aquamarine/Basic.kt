@@ -158,3 +158,39 @@ fun solveExercise5() {
     data.last { isPrime(it) }
 }
 
+// Exercise 6
+
+data class Student(val name: String, val address: String, val grade: Int)
+
+val students = listOf(
+    Student("John", "Boston", 6), Student("Jacob", "Baltimore", 2),
+    Student("Edward", "New York", 7), Student("William", "Providence", 6),
+    Student("Alice", "Philadelphia", 4), Student("Robert", "Boston", 7),
+    Student("Richard", "Boston", 10), Student("Steven", "New York", 3)
+)
+
+fun solveExercise6() {
+
+    // A
+
+    print(students)
+
+    // B
+
+    print(students.sortedBy { it.name })
+
+    // C
+
+    students.map { it.name }
+        .sortedBy { it }
+        .forEach { print(it) }
+
+    // D
+
+    students.sortedWith(compareBy({ it.grade }, { it.name }))
+        .forEach { print(it) }
+
+    // E
+
+    print(students.groupBy { it.address })
+}
