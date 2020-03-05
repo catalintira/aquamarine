@@ -95,3 +95,66 @@ fun drawShape(shape: RectangularShape?) {
         ?.also { it.render() }
 }
 
+// Exercise 5
+
+val data = listOf(4, 6, 34, 9, 2, 4, 7)
+
+fun solveExercise5() {
+
+    // A
+
+    print(data)
+
+    // B
+
+    print(data.reversed())
+
+    // C
+
+    print(data.distinct())
+
+    // D
+
+    print(data.subList(0, 3))
+
+    // E
+
+    val min: Int? = data.min()
+    if (min != null && min >= 0) print(data)
+
+    // F
+
+    print(data.map { it * it })
+
+    // G
+
+    print(data.filter { it % 2 == 0 })
+
+    // H
+
+    data.forEachIndexed { i, v -> if (v % 2 == 0) print(i) }
+
+    // I
+
+    fun isPrime(number: Int): Boolean {
+        when (number) {
+            in 0..1 -> return false
+            2 -> return true
+            else -> {
+                if(number % 2 == 0) return false
+                for (i in 3 until number step 2) {
+                    if(number % i == 0)
+                        return false
+                }
+            }
+        }
+        return true
+    }
+
+    print( data.filter { isPrime(it) } )
+
+    // J
+
+    data.last { isPrime(it) }
+}
+
