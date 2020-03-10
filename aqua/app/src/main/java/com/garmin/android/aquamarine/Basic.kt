@@ -82,9 +82,11 @@ fun initShape(shape: RectangularShape?) {
 // Exercise 4 C
 
 fun drawShape(shape: RectangularShape?) {
-    shape?.also { validateShape(it) }
-        ?.also { it.measure() }
-        ?.also { it.render() }
+    shape?.also {
+        validateShape(it)
+        it.measure()
+        it.render()
+    }
 }
 
 // Exercise 5
