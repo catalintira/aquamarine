@@ -41,17 +41,9 @@ fun getCardinalDirections(angle: Int): String {
 
 // Exercise 3
 
-val vocals = listOf('a', 'e', 'i', 'o', 'u')
+val vocals = listOf('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
 
-fun getVocalsCount(input: String): Int {
-    var toReturn = 0
-
-    input.forEach {
-        if (vocals.contains(it)) ++toReturn
-    }
-
-    return toReturn
-}
+fun getVocalsCount(input: String): Int = input.count { vocals.contains(it) }
 
 // Exercise 4 A
 
@@ -194,3 +186,52 @@ fun solveExercise6() {
 
     print(students.groupBy { it.address })
 }
+
+
+fun vineri6() {
+    val str = "abcdef"
+
+    str[0]
+    str.subSequence(0, 2)
+
+    for(l in str) print("$l ")
+
+
+    fun isEven(input : Int): Boolean {
+        return input % 2 == 0
+    }
+
+    isEven(300)
+
+
+    fun filterC(text : String) = text.filter { it !in "aeiouAEIOU" }
+
+    filterC(str)
+
+    fun String.consonants() = filter { it !in "aeiouAEIOU" }
+
+    str.consonants()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
